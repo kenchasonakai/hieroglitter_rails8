@@ -24,6 +24,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <main class="min-h-screen bg-desert">
+      <%= yield %>
+    </main>
   </body>
 </html>
