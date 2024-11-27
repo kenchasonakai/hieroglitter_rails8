@@ -23,9 +23,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="bg-desert">
     <%= render 'shared/header' %>
-    <main class="min-h-screen bg-desert">
+    <main class="min-h-screen container mx-auto pt-3">
       <%= yield %>
     </main>
   </body>
