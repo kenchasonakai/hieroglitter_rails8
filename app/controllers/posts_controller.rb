@@ -31,13 +31,17 @@ class PostsController < ApplicationController
   end
 
   def build_ogp_image(text)
-    image = MiniMagick::Image.open(Rails.root.join("app", "assets", "images", "ogp.png"))
-    image.combine_options do |config|
-      config.font Rails.root.join("app", "assets", "fonts", "SegoeUiHistoric.ttf")
-      config.fill "white"
-      config.gravity "center"
-      config.pointsize 65
-      config.draw "text 0, 0 '#{text.scan(/.{1,13}/).join("\n")}'"
+    begin
+      image = MiniMagick::Image.open(Rails.root.join("app", "assets", "images", "ogp.png"))
+      image.combine_options do |config|
+        config.font Rails.root.join("app", "assets", "fonts", "SegoeUiHistoric.ttf")
+        config.fill "white"
+        config.gravity "center"
+        config.pointsize 65
+        config.draw "text 0, 0 '#{text.scan(/.{1,13}/).join("\n")}'"
+      end
+    rescue => e
+      Rails.logger.error("Failed to process image: #{e.message}")
     end
   end
 end
