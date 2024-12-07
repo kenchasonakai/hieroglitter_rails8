@@ -160,6 +160,7 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pharaoh_lang (0.1.1)
     propshaft (1.1.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -302,6 +303,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   mysql2 (~> 0.5)
+  pharaoh_lang
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.0)
