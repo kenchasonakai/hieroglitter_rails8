@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
+    post = Post.find_by(id: params[:post])
+    set_meta_tags(og: { image: post.image&.url }) if post
   end
 
   def create
@@ -29,11 +31,11 @@ class PostsController < ApplicationController
   end
 
   def build_ogp_image(text)
-    image = MiniMagick::Image.open(Rails.root.join('app', 'assets', 'images', 'ogp.png'))
+    image = MiniMagick::Image.open(Rails.root.join("app", "assets", "images", "ogp.png"))
     image.combine_options do |config|
-      config.font Rails.root.join('app', 'assets', 'fonts', 'SegoeUiHistoric.ttf')
-      config.fill 'white'
-      config.gravity 'center'
+      config.font Rails.root.join("app", "assets", "fonts", "SegoeUiHistoric.ttf")
+      config.fill "white"
+      config.gravity "center"
       config.pointsize 65
       config.draw "text 0, 0 '#{text.scan(/.{1,13}/).join("\n")}'"
     end
