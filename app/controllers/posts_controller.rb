@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
+      @posts = Post.all
       render :index
     end
   end
