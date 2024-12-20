@@ -22,4 +22,8 @@ module ApplicationHelper
       }
     }
   end
+
+  def twitter_intent_url(post_id)
+    "https://twitter.com/intent/tweet?text=%F0%93%8E%9B%F0%93%87%8B%F0%93%87%8B%F0%93%82%8B%F0%93%8D%AF%F0%93%8E%BC%F0%93%83%AD%F0%93%87%8B%F0%93%8F%8F%F0%93%8F%8F%F0%93%87%8B%F0%93%82%8B%20%F0%93%85%B1%F0%93%8D%AF%20%F0%93%8F%8F%F0%93%85%B1%F0%93%8E%A1%F0%93%84%BF%F0%93%8F%8F%F0%93%8F%8F%F0%93%87%8B%20%F0%93%85%93%F0%93%87%8B%F0%93%88%96%F0%93%88%96%F0%93%84%BF%F0%93%85%93%F0%93%8D%AF%20%F0%93%86%91%F0%93%84%BF%F0%93%82%8B%F0%93%84%BF%F0%93%8D%AF%F0%93%88%96%F0%93%87%8B%F0%93%88%96%F0%93%84%BF%F0%93%82%8B%F0%93%8D%AF%F0%93%85%B1%20%0ahttps%3A%2F%2Fhieroglitter-0a0ed1ebffda.herokuapp.com%2Fposts%3Fpost%3D#{post_id}"
+  end
 end
