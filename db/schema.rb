@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_07_142913) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_20_110900) do
+  create_table "favorites", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_favorites_on_post_id"
+  end
+
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
   end
+
+  add_foreign_key "favorites", "posts"
 end

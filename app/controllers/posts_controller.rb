@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.new
-    @posts = Post.all
+    @posts = Post.includes(:favorites).order(created_at: :desc)
     post = Post.find_by(id: params[:post])
     set_meta_tags(og: { image: post.image&.url }) if post
   end
