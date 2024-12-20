@@ -13,8 +13,11 @@
       <div class="card-body">
         <p><%= post.body %></p>
         <div class="flex justify-end">
+          <%= link_to favolites_path(post_id: post.id), data: { turbo_method: :post} do %>
+            <%= image_tag 'cat-solid-pink.svg', class: "h-4" %>(<%= post.favolites.count %>)
+          <% end %>
           <%= link_to twitter_intent_url(post.id) do %>
-            <%= image_tag 'dove-solid.svg', class: "h-4" %>
+            <%= image_tag 'dove-solid.svg', class: "h-4 ml-3" %>
           <% end %>
         </div>
       </div>
