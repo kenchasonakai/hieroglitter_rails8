@@ -1,7 +1,7 @@
-class FavolitesController < ApplicationController
+class FavoritesController < ApplicationController
   def create
     post = Post.find(params[:post_id])
-    post.favolites.create!
+    post.favorites.create!
     redirect_to posts_path
   end
 end
