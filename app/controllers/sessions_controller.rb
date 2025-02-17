@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user_ids = User.pluck(:id)
-    redirect_to root_path, error: '𓃭𓍯𓎼𓇋𓈖 𓆑𓄿𓇋𓃭𓇋𓂧' if user_ids.blank?
+    redirect_to root_path, error: "𓃭𓍯𓎼𓇋𓈖 𓆑𓄿𓇋𓃭𓇋𓂧" if user_ids.blank?
 
     user = User.find(user_ids.sample)
     start_new_session_for user
