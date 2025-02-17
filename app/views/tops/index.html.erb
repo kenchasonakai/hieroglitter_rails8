@@ -18,7 +18,7 @@
   <h2 class="pharaoh-post-page  mt-3">
     <span class="text-2xl font-bold drop-shadow-xl bg-stone-400 bg-opacity-25">𓏤𓃭𓇋𓄿𓋴𓇋 𓇋𓈖𓏏𓇋𓂋 𓎛𓇋𓂋𓇋</span>
   </h2>
-  <%= link_to "𓏤𓎛𓄿𓂋𓄿𓍯𓎛𓃭𓍯𓎼𓇋𓈖", posts_path, class: "btn btn-primary mt-1" %>
+  <%= link_to "𓏤𓎛𓄿𓂋𓄿𓍯𓎛𓃭𓍯𓎼𓇋𓈖", session_path, class: "btn btn-primary mt-1", data: { turbo_method: :post } %>
   <h2 class="mt-3"><span class="text-2xl font-bold drop-shadow-xl">平民の方はこちら</span></h2>
   <%= link_to "ファラオになる方法を調べる", "https://www.google.com/search?q=%E3%83%95%E3%82%A1%E3%83%A9%E3%82%AA%E3%81%AB%E3%81%AA%E3%82%8B%E6%96%B9%E6%B3%95", class: "my-2 text-blue-500 underline" %>
 </div>

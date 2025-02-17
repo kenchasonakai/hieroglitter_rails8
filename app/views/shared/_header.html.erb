@@ -1,3 +1,25 @@
 <div class="navbar bg-neutral text-neutral-content">
   <%= link_to 'hieroglitter', root_path, class: "btn btn-ghost text-xl" %>
+  <% if authenticated? %>
+  <div class="flex-none gap-2 ml-auto">
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <%= image_tag Current.user.image_url, class: "w-10 rounded-full" %>
+        </div>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <li class="text-black"><%= link_to '𓏏𓍯𓏤', root_path %></li>
+        <li class="text-black"><%= link_to '𓃭𓍯𓎼𓍯𓅱𓏏', session_path, data: { turbo_method: :delete } %></li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
 </div>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> rounded-none">
+    <%= value %>
+  </div>
+<% end %>
