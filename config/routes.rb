@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :posts, only: %i[index create]
   resources :favorites, only: %i[create]
+  resources :translate_hieroglyphs, only: %i[create]
+  namespace :api do
+    resources :translated_texts, only: %i[show]
+  end
 end
