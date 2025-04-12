@@ -17,11 +17,11 @@ class TranslateHieroglyphJob < ApplicationJob
     response = client.chat(
       parameters: {
         model: "o3-mini",
-        messages: [{ role: "user", content: prompt(hierogliph)}]
+        messages: [ { role: "user", content: prompt(hierogliph) } ]
       }
     )
     translated_json = response.dig("choices", 0, "message", "content")
-    JSON.parse(translated_json.gsub('```', '').gsub('json', '').gsub(/[\r\n]/,""))["most"]
+    JSON.parse(translated_json.gsub("```", "").gsub("json", "").gsub(/[\r\n]/, ""))["most"]
   end
 
   def prompt(input)
