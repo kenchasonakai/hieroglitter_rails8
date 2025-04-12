@@ -13,7 +13,7 @@
       <div class="card-body">
         <% if post.translated_text.present? %>
           <div class="ml-auto p-1">
-            <%= image_tag 'play_button.svg', class: "h-5" %>
+            <%= image_tag 'play_button.svg', class: "h-5 play", id: post.id %>
           </div>
         <% else %>
           <div class="badge badge-accent ml-auto p-1" id=<%= "translated_text_#{post.id}" %>>
