@@ -4,5 +4,6 @@ class Post < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
 
+  mount_uploader :ogp_image, OgpImageUploader
   mount_uploader :image, ImageUploader
 end
