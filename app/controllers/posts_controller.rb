@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    { body: hierogliph_body, image: attach_ogp_image }
+    { body: hierogliph_body, ogp_image: attach_ogp_image, image: params[:post][:image] }
   end
 
   def attach_ogp_image

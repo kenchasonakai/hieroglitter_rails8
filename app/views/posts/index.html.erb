@@ -5,7 +5,10 @@
       <%= form.text_field :body, class: "input input-bordered", placeholder: "𓏤𓃭𓊃 𓅱𓂋𓇋𓏏𓇋 𓃀𓇋 𓄿𓃭𓏤𓎛𓄿𓃀𓇋𓏏 𓍯𓂋 𓆓𓄿𓏤𓄿𓈖𓇋𓋴𓇋" %>
     </div>
     <div class="flex justify-between mt-2">
-      <%= image_tag 'image_icon.svg', class: 'h-8 mt-auto cursor-pointer' %>
+      <%= form.label :image do %>
+        <%= image_tag 'image_icon.svg', class: 'h-8 mt-auto cursor-pointer' %>
+        <%= form.file_field :image, class: 'hidden' %>
+      <% end %>
       <%= form.submit "𓏤𓍯𓋴𓏏", class: "btn btn-primary tracking-widest" %>
     </div>
   <% end %>
@@ -22,6 +25,7 @@
           </div>
         <% end %>
         <p><%= post.body %></p>
+        <%= image_tag post.image_url, class: "w-1/2 mx-auto mt-3" if post.image.present? %>
         <div class="flex justify-end">
           <%= link_to favorites_path(post_id: post.id), data: { turbo_method: :post} do %>
             <%= image_tag 'cat-solid-pink.svg', class: "h-4" %>(<%= post.favorites.count %>)
