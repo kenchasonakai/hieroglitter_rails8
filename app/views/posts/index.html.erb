@@ -15,7 +15,6 @@
   <% @posts.each do |post| %>
     <div class="card bg-base-100 w-full max-w-screen-md mx-auto bg-slate-200 rounded-none border-b border-neutral-400">
       <div class="card-body">
-        <!--
         <% if post.translated_text.present? %>
           <div class="ml-auto p-1">
             <%= image_tag 'play_button.svg', class: "h-5 play", id: post.id %>
@@ -25,7 +24,6 @@
             <%= link_to "平民用翻訳機能", translate_hieroglyphs_path(post_id: post.id), data: { turbo_method: :post}, onclick: "document.getElementById('translated_text_#{post.id}').classList.add('loading')" %>
           </div>
         <% end %>
-        -->
         <p><%= post.body %></p>
         <%= image_tag post.image_url, class: "w-1/2 mx-auto mt-3" if post.image.present? %>
         <div class="flex justify-end">
