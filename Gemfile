@@ -38,7 +38,7 @@ gem "pharaoh_lang"
 
 gem "meta-tags"
 
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.1"
 
 gem "fog-aws"
 
